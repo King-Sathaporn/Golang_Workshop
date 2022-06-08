@@ -1,0 +1,13 @@
+build 1
+go build
+
+build 2
+go build -ldflags "-s -w"
+
+using env: export GIN_MODE=release
+-----------------------------------------------
+
+#deploy on heroku
+
+1. Create pipeline by github
+2. Create procfile

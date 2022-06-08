@@ -1,0 +1,18 @@
+###Get transcriptome
+
+GET  http://localhost:8085/api/v2/transaction HTTP/1.1
+
+
+###create transaction
+POST http://localhost:8085/api/v2/transaction HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJMZXZlbCI6Im5vcm1hbCIsImV4cCI6MTY1NDY5NTE1OSwiaWQiOjQsInVzZXJuYW1lIjoiYWRtaW4zIn0.pRSALDfXMMzutvJNV-5rEh1OmIxVcxXNa1lkPYJH9YE
+Content-Type: application/json
+
+{
+    "total": 1200,
+    "paid": 1500,
+    "change": 300,
+    "payment_type": "cash",
+    "payment_details": "full",
+    "order_list": "[esp8266, arduino uno r3, esp32]"
+}
