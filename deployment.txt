@@ -11,3 +11,11 @@ using env: export GIN_MODE=release
 
 1. Create pipeline by github
 2. Create procfile
+3. Create app and pipline on heroku
+4. Back to source code and edit port
+5. Go to heroku and setting tab and add variable GOVERSION
+
+-- view log in heroku --
+1. install CLI
+2.run :cmd
+3. run :heroku logs --tail --app my-golang-stock

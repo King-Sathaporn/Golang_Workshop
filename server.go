@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"main/api"
 	"os"
 
@@ -8,17 +9,17 @@ import (
 )
 
 func main() {
+
+	var port = os.Getenv("PORT")
 	router := gin.Default()
 	router.Static("/images", "./uploaded/images")
 
 	api.Setup(router)
-	router.Run(getPort())
-}
-
-func getPort() string{
-	var port = os.Getenv("PORT")
 	if port == "" {
-		port = "8085"
+		fmt.Println("No Port In Heroku")
+		router.Run()
+	} else {
+		fmt.Println("Environment Port: " + port)
+		router.Run(":" + port)
 	}
-	return ":" + port
 }
