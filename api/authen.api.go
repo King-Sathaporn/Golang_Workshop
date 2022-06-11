@@ -28,7 +28,7 @@ func login(c *gin.Context) {
 
 			c.JSON(401, gin.H{"result": "error", "error": err})
 
-		} else if !checkPassword(user.Password, queryUser.Password) {
+		} else if !(checkPassword(user.Password, queryUser.Password)) {
 			//? !checkPassword(user.Password, queryUser.Password) equals to checkPassword(user.Password, queryUser.Password) == false
 
 			c.JSON(401, gin.H{"result": "Invalid username or password"})
